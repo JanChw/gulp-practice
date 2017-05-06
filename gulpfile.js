@@ -28,23 +28,23 @@ gulp.task('toCss',()=>{
   gulp.src('./src/styles/**/*.scss')
       .pipe(watch('./src/styles/**/*.scss'))
       .pipe(sass())
-      .pipe(gulp.dest('./dist/css'))
+      .pipe(gulp.dest('./dist/styles'))
       .pipe(connect.reload());
 });
 
 gulp.task('toBabel',()=>{
-  glup.src('./src/scripts/**/*.js')
+  gulp.src('./src/scripts/**/*.js')
       .pipe(watch('./src/scripts/**/*.js'))
       .pipe(babel({
-        preset:'2015'
+        presets:['es2015']
       }))
-      .pipe(gulp.dest('./dest/js'))
+      .pipe(gulp.dest('./dist/scripts'))
       .pipe(connect.reload());
 });
 
 gulp.task('imgSource',()=>{
-  glup.src('./src/imgs/**/*')
-      .pipe(wathc('./src/imgs/**/*'))
+  gulp.src('./src/imgs/**/*')
+      .pipe(watch('./src/imgs/**/*'))
       .pipe(gulp.dest('./dist/imgs'));
 });
 

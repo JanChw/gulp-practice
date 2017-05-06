@@ -6,3 +6,5 @@ class O {
     cosnole.log('b from O');
   }
 }
+let o = new O();
+o.a();

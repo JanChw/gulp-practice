@@ -10,7 +10,7 @@ gulp.task('clean',()=>{
       .pipe(clean('./dist'))
 });
 
-gulp.task(server,()=>{
+gulp.task('server',()=>{
   connect.server({
     root:'./dist',
     livereload:true

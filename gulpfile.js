@@ -16,6 +16,7 @@ gulp.task(server,()=>{
     livereload:true
   });
 });
+
 gulp.task('index',()=>{
   gulp.src('./src/index.html')
       .pipe(watch('./src/index.html'))
@@ -48,3 +49,5 @@ gulp.task('imgSource',()=>{
 });
 
 gulp.task('watch',['index','toCss','toBabel','imgSource']);
+
+gulp.task('default',['server,watch']);

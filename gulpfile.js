@@ -50,4 +50,4 @@ gulp.task('imgSource',()=>{
 
 gulp.task('watch',['index','toCss','toBabel','imgSource']);
 
-gulp.task('default',['server,watch']);
+gulp.task('default',['server','watch']);

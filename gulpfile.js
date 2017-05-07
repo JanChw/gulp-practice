@@ -4,6 +4,9 @@ const clean = require('gulp-clean-dest');
 const connect = require('gulp-connect');
 const sass = require('gulp-sass');
 const babel = require('gulp-babel');
+const uglify = require('gulp-uglify');
+const minifyCss = require('gulp-minify-css');
+const imageMin = require('gulp-imgagemin');
 
 gulp.task('clean',()=>{
   gulp.src('./dist/**/*')
@@ -28,6 +31,7 @@ gulp.task('toCss',()=>{
   gulp.src('./src/styles/**/*.scss')
       .pipe(watch('./src/styles/**/*.scss'))
       .pipe(sass())
+      .pipe(minifyCss())
       .pipe(gulp.dest('./dist/styles'))
       .pipe(connect.reload());
 });
@@ -38,6 +42,7 @@ gulp.task('toBabel',()=>{
       .pipe(babel({
         presets:['es2015']
       }))
+      .pipe(uglify())
       .pipe(gulp.dest('./dist/scripts'))
       .pipe(connect.reload());
 });
@@ -45,6 +50,7 @@ gulp.task('toBabel',()=>{
 gulp.task('imgSource',()=>{
   gulp.src('./src/imgs/**/*')
       .pipe(watch('./src/imgs/**/*'))
+      .pipe(imageMin())
       .pipe(gulp.dest('./dist/imgs'));
 });
 

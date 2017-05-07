@@ -1,7 +1,59 @@
+
+@import 'reset';
+@import 'variables';
 html{
   body{
     background:url('../imgs/background.jpg');
-    color:#fff;
-    font-size: 18px;
+    color:$primary-color;
+    font-size: $primary-font-size;
   }
 }
+ header{
+      .nav{
+        height:$primary-header-height;
+         border-bottom:$primary-header-border;
+        .nav-item-box{
+          float:left;
+           height:$primary-header-height;
+          li{
+            display: block;
+            float:left;
+            height:$primary-header-height;
+            line-height: $primary-header-height;
+            list-style: none;
+            margin:$primary-header-margin;
+            font-size: 18px;
+            a{
+              color:$primary-color;
+              text-decoration: none;
+              &:hover{
+                color:#fff;
+                font-size: 23px;
+              }
+            }
+          }
+
+        }
+        .form-login{
+          display: block;
+          float: right;
+          .form-login-item{
+            height:$primary-header-height;
+            margin:$primary-header-margin;
+            line-height: 97px;
+             float:left;
+             input{
+               outline:none;
+               border-style: none;
+               border-bottom: $primary-header-border;
+              background:none;
+              &[type=submit]{
+                  font-size: 18px;
+                  color: $primary-color;
+                  border:none;
+              }
+             }
+          }
+        }
+      }
+    }

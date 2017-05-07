@@ -6,7 +6,7 @@ const sass = require('gulp-sass');
 const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
 const minifyCss = require('gulp-minify-css');
-const imageMin = require('gulp-imgagemin');
+const imageMin = require('gulp-imagemin');
 
 gulp.task('clean',()=>{
   gulp.src('./dist/**/*')
